@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans:wght@400;500;600;700;800;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.contenedor1{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.container{
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.contenedor2{
+    width: 90%;
+    height: 80vh;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+.icono-div{
+    width: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+}
+.titulo-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 10px;
+}
+.titulo-div >h2{
+    color: #333;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+}
+.titulo-div >h3{
+    color: #333;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+}
+form{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+.input-div{
+    width: 100%;
+    height: 48px;
+    border-radius: 8px;
+    border: 1px solid #BDBDBD;
+    outline: none;
+    display: flex;
+
+}
+.input-div:focus-within{
+    border: 2px solid #333;
+}
+.contenedor-icono{
+    height: 48px;
+    width: 12%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenedor-icono >span{
+    color: #828282;
+}
+.input-div >input{
+    width: 85%;
+    border: none;
+    outline: none;
+    color: #828282;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+}
+#loginBtn{
+    width: 100%;
+    height: 38px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    background: #2F80ED;
+    color: #FFF;
+    text-align: center;
+    font-family: Noto Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+}
+#loginBtn:hover{
+    cursor: pointer;
+}
+.text{
+    color: #828282;
+    font-family: Noto Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.social-media-div{
+    width: 65%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sm-icons:hover{
+    cursor: pointer;
+}
+.already-member-div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+.already-member-div >a{
+    color: #2D9CDB;
+    font-family: Noto Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+}
+.creditos-div{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.creditos-div >p{
+    color: #BDBDBD;
+    font-family: Noto Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+}
+@media screen and (min-width: 900px){
+    .contenedor1{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap:10px;
+    }
+    .container{
+        width: 25%;
+        height: 575px;;
+        border-radius: 24px;
+        border: 1px solid #BDBDBD;
+    }
+    .contenedor2{
+        width: 90%;
+        padding-top: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        gap: 15px;
+    }
+    .creditos-div{
+        width: 25%;
+    }
+}
