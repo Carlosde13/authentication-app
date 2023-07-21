@@ -311,6 +311,13 @@ form >input:hover{
     font-style: normal;
     font-weight: 400;
 }
+.alerta{
+    color: var(--red, #EB5757);
+    font-family: Noto Sans;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+}
 @media screen and (min-width: 900px){
     .contenedor1{
         min-height: 100vh;

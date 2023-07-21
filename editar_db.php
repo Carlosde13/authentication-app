@@ -26,11 +26,17 @@
 
         if (isset($_FILES['img']) && is_uploaded_file($_FILES["img"]["tmp_name"])) {
             
-            $datos = addslashes(file_get_contents($_FILES["img"]["tmp_name"]));
-            $query = "UPDATE usuarios SET foto = '$datos' WHERE id = $idDB ";
-            $mysqli -> query($query);
+            if($_FILES["img"]["size"] <= 64000){
+                $datos = addslashes(file_get_contents($_FILES["img"]["tmp_name"]));
+                $query = "UPDATE usuarios SET foto = '$datos' WHERE id = $idDB ";
+                $mysqli -> query($query);
 
-            echo "foto actualizado ";
+                echo "foto actualizado ";
+            }else{
+                $_SESSION["size_error"] = "Don't select a picutre higher than 64KB";
+                header("Location: edit-info.php");
+                die();
+            }
         }
         if($name != null){
             $query = "UPDATE usuarios SET nombre = '$name' WHERE id = $idDB ";

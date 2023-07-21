@@ -24,13 +24,13 @@
 
                 header("Location: profile.php");
             }else{
-                $_SESSION["error_login"] = "Credenciales Invalidas";
+                $_SESSION["error_login"] = "Invalid Credentials. Try again.";
                 header("Location: login.php");
             }
 
             
         }else{
-            $_SESSION["error_login"] = "Credenciales Invalidas";
+            $_SESSION["error_login"] = "Invalid Credentials. Try again.";
             header("Location: login.php");
         }
         

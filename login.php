@@ -37,6 +37,15 @@
                         </div>
                         <input placeholder="Password" id="pw" name="pw" type="password"/>
                     </div>
+                    <small class="alerta"> 
+                            <?php  
+                                session_start();
+                                if(isset($_SESSION["error_login"])){
+                                    echo "". $_SESSION['error_login']."";
+                                }
+                                unset($_SESSION['error_login']);
+                            ?>
+                    </small>
                     <input type="submit" value="Login" id="loginBtn">
                 </form>
                 <p class="text">or continue with these social profile</p>

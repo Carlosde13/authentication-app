@@ -102,6 +102,14 @@
                         </div>  
                         <label for="file-input" class="custom-file-button">CHANGE PHOTO</label>
                         <input type="file" id="file-input" accept="image/*" name="img">
+                        <small class="alerta"> 
+                            <?php  
+                                if(isset($_SESSION["size_error"])){
+                                    echo "". $_SESSION['size_error']."";
+                                }
+                                unset($_SESSION['size_error']);
+                            ?>
+                        </small>
                     </div>
                     <div class="datos-actualizar">
                         <label for="nombre">Name</label>
