@@ -6,6 +6,7 @@
     <title>Register</title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
+    <link rel="icon" type="image/png" href="./icons/devchallenges.ico">
     <link rel="stylesheet" href="./styles/index.css">
 
 </head>
@@ -20,7 +21,7 @@
                     <h2>Join thousands of learners from around the world</h2>
                     <h3>Master web development by making real-life projects. There are multiple paths for you to choose</h3>
                 </div>
-                <form method="POST">
+                <form action="registro_db.php" method="POST">
                     <div class="input-div">
                         <div class="contenedor-icono">
                             <span class="material-symbols-outlined">
@@ -48,7 +49,7 @@
                 </div>
                 <div class="already-member-div">
                     <p class="text">Already a member?</p>
-                    <a href="#">Login</a>
+                    <a href="./login.php">Login</a>
                 </div>
             </div>
         </div>

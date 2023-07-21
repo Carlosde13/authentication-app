@@ -283,6 +283,9 @@
     font-style: normal;
     font-weight: 400;
 }
+#tel-div.info-div{
+    display: none;
+}
 @media screen and (min-width: 900px){
     .contenedor1{
         width: 100%;
@@ -342,5 +345,20 @@
     .para-desplegable-div:hover{
         cursor: pointer;
     }
-    
+    #tel-div.info-div{
+        width: 98%;
+        height: auto;
+        border-bottom: 1px solid #E0E0E0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .titulo-boton-div{
+        padding-top: 10px;
+    }
+}
+@media screen and (max-height: 900px){
+    .contenedor3{
+        height: auto;
+    }
 }

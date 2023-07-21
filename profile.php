@@ -1,3 +1,43 @@
+<?php
+    session_start();
+
+    //coborrorar la sesion iniciada por el usuario
+    if(!isset($_SESSION["usuario"])){
+        header("Location: login.php");
+        die();
+    }
+    extract($_SESSION["usuario"]);
+    $name;
+    $biography;
+    $tel;
+    $pic;
+
+    if($nombre === null){
+        $name= "Please, add your name";
+    }else{
+        $name = $nombre;
+    }
+
+    if($bio === null){
+        $biography= "Please, add your bio";
+    }else{
+        $biography = $bio;
+    }
+
+    if($telefono===null){
+        $tel= "Please, add your phone number";
+    }else{
+        $tel = $telefono;
+    }
+
+    $urlTotal;
+    if($foto===null){
+        $urlTotal = "./icons/profile-pic.png";
+    }else{
+        $url = base64_encode($_SESSION['usuario']['foto']);
+        $urlTotal = "data:image/jpg;base64, $url";
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +47,7 @@
 
     <link rel="stylesheet" href="./styles/profile.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
+    <link rel="icon" type="image/png" href="./icons/devchallenges.ico">
     <script src="./javascript/menu.js" defer></script>
 </head>
 <body>
@@ -17,10 +58,10 @@
                 <img src="./icons/devchallenges.svg" alt="Page Logo"/>
                 <div class="para-desplegable-div">
                     <div class="img-container">
-                        <img src="./icons/profile-pic.png" alt="User Picture"/>
+                        <img src= '<?php echo $urlTotal ?>' alt="User Picture"/>
                     </div>
                     <div class="nombre-desplegable">
-                        <p>Xanthe Neal</p>
+                        <p> <?php echo $nombre; ?> </p>
                         <div class="" id="flecha-div">
                             <span class="material-symbols-outlined">
                                 arrow_drop_down
@@ -38,7 +79,7 @@
                                     person
                                 </span>
                             </div>
-                            <a class="nombre-opcion" href="#">My Profile</a>
+                            <a class="nombre-opcion" href="./profile.php">My Profile</a>
                         </div>
                     </div>
                     <div class="opcion-menu">
@@ -59,7 +100,7 @@
                                     logout
                                 </span>
                             </div>
-                            <a class="nombre-logout" href="#">Logout</a>
+                            <a class="nombre-logout" href="./logout.php">Logout</a>
                         </div>
                     </div>
                 </div>
@@ -77,7 +118,7 @@
                         <h5>Some info may be visible to other people</h5>
                     </div>
                     <div class="boton-div">
-                        <button id="editBtn">Edit</button>
+                        <button id="editBtn" onclick="redireccionarEditar()">Edit</button>
                     </div>
                 </div>
                 <div class="divisor"></div>
@@ -85,26 +126,32 @@
                     <div class="info-div2">
                         <p>PHOTO</p>
                         <div class="img-container2">
-                            <img src="./icons/profile-pic.png" alt="User Picture"/>
+                            <img src= '<?php echo $urlTotal ?>' alt="User Picture"/>
                         </div>
                     </div>
                 </div>
                 <div class="info-div">
                     <div class="info-div2">
                         <p>NAME</p>
-                        <b>Xanthe Neal</b>
+                        <b><?php  echo $name;  ?></b>
                     </div>
                 </div>
                 <div class="info-div">
                     <div class="info-div2">
                         <p>BIO</p>
-                        <b>I am a software developer...</b>
+                        <b><?php  echo $biography;  ?></b>
+                    </div>
+                </div>
+                <div class="info-div" id="tel-div">
+                    <div class="info-div2">
+                        <p>Phone</p>
+                        <b><?php  echo $tel;  ?></b>
                     </div>
                 </div>
                 <div class="info-div">
                     <div class="info-div2">
                         <p>EMAIL</p>
-                        <b>xanthe.neal@gmail.com</b>
+                        <b><?php  echo $correo;  ?></b>
                     </div>
                 </div>
                 <div class="info-div">

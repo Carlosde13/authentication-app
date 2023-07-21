@@ -6,6 +6,7 @@
     <title>Login</title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
+    <link rel="icon" type="image/png" href="./icons/devchallenges.ico">
     <link rel="stylesheet" href="./styles/login.css">
 
 </head>
@@ -19,7 +20,7 @@
                 <div class="titulo-div">
                     <h2>Login</h2>
                 </div>
-                <form method="POST">
+                <form action="login_db.php" method="POST">
                     <div class="input-div">
                         <div class="contenedor-icono">
                             <span class="material-symbols-outlined">
@@ -47,7 +48,7 @@
                 </div>
                 <div class="already-member-div">
                     <p class="text">Don't have an account yet?</p>
-                    <a href="#">Register</a>
+                    <a href="./index.php">Register</a>
                 </div>
             </div>
         </div>
