@@ -21,16 +21,18 @@
             if($comparacionPass===true){
             
                 $_SESSION["usuario"]= $datos;
-
+                $mysqli -> close();
                 header("Location: profile.php");
             }else{
                 $_SESSION["error_login"] = "Invalid Credentials. Try again.";
+                $mysqli -> close();
                 header("Location: login.php");
             }
 
             
         }else{
             $_SESSION["error_login"] = "Invalid Credentials. Try again.";
+            $mysqli -> close();
             header("Location: login.php");
         }
         

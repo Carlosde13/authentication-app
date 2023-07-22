@@ -38,6 +38,15 @@
                         </div>
                         <input placeholder="Password" id="pw" name="pw" type="password"/>
                     </div>
+                    <small class="alerta"> 
+                            <?php  
+                                session_start();
+                                if(isset($_SESSION["duplicate_error"])){
+                                    echo "". $_SESSION['duplicate_error']."";
+                                }
+                                unset($_SESSION['duplicate_error']);
+                            ?>
+                    </small>
                     <input type="submit" value="Start Coding Now" id="startCodingBtn">
                 </form>
                 <p class="text">or continue with these social profile</p>

@@ -35,6 +35,7 @@
             }else{
                 $_SESSION["size_error"] = "Don't select a picutre higher than 64KB";
                 header("Location: edit-info.php");
+                $mysqli -> close();
                 die();
             }
         }
@@ -73,7 +74,7 @@
         $usuarioBD = $mysqli->query($queryUsuario);
 
         $_SESSION["usuario"] = $usuarioBD->fetch_assoc();
-
+        $mysqli -> close();
         header("Location: profile.php");      
     }
 ?>
