@@ -25,6 +25,14 @@
         extract($_POST);
 
         if (isset($_FILES['img']) && is_uploaded_file($_FILES["img"]["tmp_name"])) {
+            $tipo = $_FILES["img"]["type"];
+
+            if(substr($tipo, 0,5)!="image"){
+                $_SESSION["size_error"] = "Please, select an image file.";
+                header("Location: edit-info.php");
+                $mysqli -> close();
+                die();
+            }
             
             if($_FILES["img"]["size"] <= 64000){
                 $datos = addslashes(file_get_contents($_FILES["img"]["tmp_name"]));
