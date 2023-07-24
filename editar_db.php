@@ -1,20 +1,4 @@
 <?php
-    /*session_start();
-
-    if(isset($_FILES['img']) && ($_SERVER["REQUEST_METHOD"] === "POST")){
-        extract($_POST);
-
-        $datos = addslashes(file_get_contents($_FILES["img"]["tmp_name"]));
-        
-        print_r($bio);
-        
-        //print_r($datos);
-        
-    }*/
-    
-?>
-
-<?php
     session_start();
     require ("conexion_db.php");
     $idDB = $_SESSION['usuario']['id'];
