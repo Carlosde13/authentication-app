@@ -95,10 +95,17 @@
                 </div>
                 <form action="editar_db.php" method="POST" enctype="multipart/form-data">
                     <div class="update-picture">
-                        <div class="img-container">
-                            <span class="material-symbols-outlined">
-                                photo_camera
-                            </span>
+                        <style>
+                            #chg-pic{
+                                background-image: url('<?php echo $urlTotal ?>'); /*      CSS            */
+                            }
+                        </style>
+                        <div class="img-container" id="chg-pic" >
+                            <label for="file-input">
+                                <span class="material-symbols-outlined">
+                                    photo_camera
+                                </span>
+                            </label>
                         </div>  
                         <label for="file-input" class="custom-file-button">CHANGE PHOTO</label>
                         <input type="file" id="file-input" accept="image/*" name="img">
@@ -127,6 +134,14 @@
                         <label for="correo">Email</label>
                         <input placeholder="Enter your email..." id="correo" type="email" name="email">
                     </div>
+                    <small class="alerta"> 
+                            <?php  
+                                if(isset($_SESSION["duplicate_error"])){
+                                    echo "". $_SESSION['duplicate_error']."";
+                                }
+                                unset($_SESSION['duplicate_error']);
+                            ?>
+                    </small>
                     <div class="datos-actualizar">
                         <label for="contrasena">Password</label>
                         <input placeholder="Enter your password..." id="contrasena" type="password" name="pw">

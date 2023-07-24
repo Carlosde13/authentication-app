@@ -34,7 +34,7 @@
                 die();
             }
             
-            if($_FILES["img"]["size"] <= 64000){
+            if($_FILES["img"]["size"] <= 79000){
                 $datos = addslashes(file_get_contents($_FILES["img"]["tmp_name"]));
                 $query = "UPDATE usuarios SET foto = '$datos' WHERE id = $idDB ";
                 $mysqli -> query($query);
@@ -63,10 +63,25 @@
             echo "tel actualizado ";
         }
         if($email != null){
+
+            $consulta = "SELECT * FROM usuarios WHERE correo = '$email' ";
+
+            $consultaEjecutada = $mysqli -> query($consulta);
+
+            $numCoincidencias = $consultaEjecutada -> num_rows;
+
+            if($numCoincidencias > 0){
+                $_SESSION["duplicate_error"] = "Email already associated with another account.";
+                $mysqli -> close();
+                header("Location: edit-info.php");
+                die();
+            }else{
+                $query = "UPDATE usuarios SET correo = '$email' WHERE id = $idDB ";
+                $resultado = $mysqli -> query($query);
+                echo "email actualizado";
+            }
             
-            $query = "UPDATE usuarios SET correo = '$email' WHERE id = $idDB ";
-            $resultado = $mysqli -> query($query);
-            echo "email actualizado";
+            
         }
         if($pw != null){
             $contrasenaEncriptada = password_hash($pw, PASSWORD_DEFAULT);
