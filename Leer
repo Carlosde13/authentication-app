@@ -2,3 +2,15 @@ NOMBRE DE BASE DE DATOS: dev_challenge
 
 CONTRASENAS: para el usuario con el correo admin@admin.com la contrasena es admin  
              para el resto de usuarios la contrasena es 123
+
+
+MANEJO DE ERRORES: 
+                    mensaje de error al tratar de registrar un correo que ya esta registrado 
+
+                    mensaje de error en la vista de editar cuando se quiere poner un correo que esta registrado 
+
+                    se redirecciona a login si el usuario trata de ingresar al perfil por medio de la url y aun no se ha logueado
+
+                    ya que guarde las imagenes en la BD, se restringe el tamano de las imagenes que el usuario subira.
+
+                    
